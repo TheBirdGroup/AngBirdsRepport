@@ -1,0 +1,51 @@
+%% This document gives an example on how to use the gucmasterthesis
+%% LaTeX document class.
+
+%% Use short name MMT MIS or CIMET, and language,  english or norwegian
+\documentclass[MACS,english]{gucthesis}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}     % For utf8 encoded .tex files allows norwegian characters in the files. This can be dangerous if you change to a differnt editor.
+\usepackage[pdftex]{graphicx, hyperref}   % For cross references in pdf
+\usepackage{color}              % For colouring text   
+\usepackage{url}
+
+\begin{document}
+
+\input{MastersThesisData} % this is the file which contains all the details about your thesis
+\makefrontpages % make the frontpages
+%\input{MastersIntro}
+
+
+\tableofcontents
+
+% Comment with a percent to remove figures or tables:
+\listoffigures
+% \listoftables
+
+
+% All the chapters/extra files are declared here using the file names
+\include{chapters/abstract}
+\include{chapters/introduction}
+\include{chapters/functionality}
+\include{chapters/architecture}
+\include{chapters/conclusion}
+% \include{packages}
+
+
+
+
+\bibliographystyle{gucthesis}
+\bibliography{MastersExample}
+%\begin{thebibliography}{9}
+%\bibitem{RESTRef} 
+%Fielding, Roy Thomas. \textit{Architectural Styles and the Design of Network-based Software Architectures}. Doctoral dissertation, University of California, Irvine, 2000
+%\end{thebibliography}
+
+
+%\end{gather*}
+
+\appendix
+\include{appendix}
+
+\end{document}

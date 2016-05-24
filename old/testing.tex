@@ -1,0 +1,26 @@
+
+\chapter{Testing}
+\label{chap:testing}
+% Write about the test plan, why it would be useful how it was made, etc.
+% How different parts of the API was tested
+% 
+
+It was useful to create a test plan and develop a test strategy in order to have a clean understanding of testing in project at whole. The test plan was created until third sprint. Before completing of it, several testing frameworks  that will be relevant to test JAX-RS RESTFUL web service were examined. Test plan contained answers of questions such as: how to test, what to test, at what level to test, who is testing and when to test.
+
+Answering the question what to test was the most important one in context of the test plan. Test resources, services and utilities classes in the API were tested. One of the goals was also to test the controllers in the UI-prototype. However, due to lack of time, it was impossible to made this part of testing. Product owner was notified regarding this towards the end of the project.
+
+The answer to the question "on what level to test" had an impact on which frameworks should be used for testing. The JUnit framework  was used to write unit tests in API\cite{JUnit3:online}.
+ Assertions were used in biggest part of unit tests.\textquotedbl JUnit provides overloaded assertion methods for all primitive types, objects and arrays. The usual parameter order is expected value followed by actual value\textquotedbl
+ \cite{Asser18:online}.
+Exception testing also take place in unit testing together with JUnit: one of the testing tasks was to verify that a function would throw an exception under certain circumstances.
+
+The Mockito framework was used to test resources on the API \cite{mockitoRef}. Mockito framework allows constructing a certain flow of logic that the code has to go through. The main idea of using it was to mock services. In each unit test for resources service classes were mocked. This made it possible to verify actual calls to underlying objects. \textquotedbl To create a stub (or a mock), use mock(class). Then use \texttt{when(mock).thenReturn(value)} to specify the stub value for a method\textquotedbl \cite{Mocki40:online}.  
+
+The test plan did also discuss implementing integration tests. In the project, the integration tests would be for example to make a concrete API call to a test-instance of the API. 
+For testing controllers in UI the decision was made in favor of Jasmine framework and Karma task runner.
+Taking into account that front-end was written in AngularJS, testing part for it should be not complicated. AngularJS has dependency injection built-in, that makes testing process better and easier, because you can pass in a component's dependencies and stub or mock them as you wish. \textquotedbl At its core, Karma launches instances of the web browsers you choose, loads the files you specify, and reports the results of your tests from the browsers back to your terminal\textquotedbl \cite{Testi43:online} Jasmine is Behavior-Driven Development framework that is also fits our needs.
+
+Another important point in the testing strategy was to make right choice who will make testing. In this project, both developers and the testing team were working on this task. It is good point in testing strategy when biggest part of tests are written by the test-team (team members who did not implement new features in the system). And in this project, this was taken deeply into consideration. It make sense for a testing team to write the tests and not the developers implementing the code subject to test because developer know what input value code expected and they sometimes cannot take into account some values that shouldn't work. Another point that tester read documentation to code and know just what functionality this code has and check if this functionality works as it should work.
+All the tests were executed once a new test was implemented or through continuous integration with Bamboo. For further reading on continuous integration, see chapter \ref{chap:process}.
+
+	
