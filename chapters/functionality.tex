@@ -1,4 +1,104 @@
 \chapter{Functionality}
 \label{chap:functionality}
 
-This is our webapps functionality 
+%This is our webapps functionality,  (3-6 pages of text – %screen dumps in addition)
+
+%\begin{itemize}
+%\item Description of the target users 
+%\item Description of key features of the application, including key screenshots 
+%\item Assessing functional strengths and weaknesses 
+%\item Assessing innovativeness 
+%\item Description of the innovation/development process 
+%\item Discussion of the process used to innovate, develop, and test functionality
+%\end{itemize}
+\section{Target users:}
+\label{sec:targetusers}
+The target users for this quiz application is rather wide. Our current implementation focuses on birds where everyone from novices to professionals  can participate and exercise. The amazing thing about the quiz is that it can start supporting a new type of quiz really easy for example having a quiz on mammals. It is really expendable and can be adapted to close to any user demographic within the e-learning area. This can be easily be extended to work with for example cars butterflies or even people. Like if you have a lot of names to learn it can be adapted to take an image quiz on those people. The possibilities are almost endless. That being said, the main target user group is still birds as this is developed under the banner if BirdID. Testing have been done on people with interest in birds, before this project began and the response have been positive, showing that the target users are interested.
+
+
+\section{Key features:}
+\label{sec:keyfeatures}
+The application has four core quizzes and five core features:
+\begin{enumerate}
+    \item The quiz
+    \begin{itemize}
+        \item Image quiz
+        \item Sound Quiz
+        \item Several Sound Quiz
+        \item Beginner Quiz
+    \end{itemize}
+    \item Competition groups
+    \item Formal Test
+    \item Changing language
+    \item Authentication
+    \begin{itemize}
+        \item Login
+        \item Register 
+        \item Forgot /reset password
+    \end{itemize}
+\end{enumerate}
+
+\break
+
+Image, sound and several sound quizzes are self explanatory types. The users can take quiz where they are presented with images, sound or several sounds playing at the same time. In the several sound quiz since there are multiple birds singing at the same time there is more than one correct answer.
+
+The beginner quiz is a nice way for the user to dive into learning about birds, it has the least difficulty level and it provides a image and a sound from the bird to maximize the users knowledge. 
+
+For all types of quizzes explained above the user can specify additional settings they include selecting a specific area that they quiz will be focused on, the number of questions the user want to answer, limited/unlimited time to answer each question, alternatives or free type meaning does the user want to type out the name of the bird or they want to select from predefined choices, the user can select a species that are found in the area that they selected previously and in the end they can chose if they want to get hints during the quiz for the current implementation the user has unlimited hint where each hint is deleting one wrong alternative and gives one letter on each trigger when the user is in the free type quiz. The users can not submit the result if they have selected the hints option, this is to prevent user from cheating the system.
+
+%make one paragraph out ot these two
+There are two more types of quizzes, competition groups and formal test. Competition groups can hold predefined setting and can be password protected allowing the user to compete among each other inside the group. If the group does not have predefined settings then the user can select them from the additional settings. \newline
+Formal test on the other hand is the official exam that you can take from the Nord University. If the user has (what were the requirements? ) scored on some of the quizzes excluding beginner? they can take the formal test. 
+
+Two great functionality the quiz application offers is the competition groups and the formal test. Each of them allows for a predefined quiz as setip by someone and allows users to further test and assess there knolege. Taking a formal test provides a lot of extra security features, but they are handled on server side in orer to make it secure. 
+
+
+Changing language: 
+
+
+\section{Functionality strengths and weaknesses:}
+\label{sec:functstengwek}
+The quiz application contains a lot of functionality and most of it is not really visible or working under the hood for making a smooth experience. The quiz features a lot of customization of settings, allowing the users to tailor the quiz to their needs and therefor offers a lot of replayability. The questions in the backend API are in a rather high volume as well, where it has several thousand questions/tasks on the current dev server, but an outstanding 25 000 media on the live server. The change of getting the same question/task twice is therefor really low. Each time someone takes the quiz they will get a different quiz than earlier and this might be one of the greatest strengths of the quiz. This is also a major downsides as well since the server return  random list of questions. This makes it really hard to compare your results to the people as they might have gotten slightly easier questions. This does of course even out over several quizzes. This is attempt to partially solve in competition groups where the pool of questions is severely limited, but there is still an element of randomness.
+
+The user is able to create and use an account with the quiz. This brings great benefits to the user like tracking persistent statistics and helping the user focus on those species they are having problems with. A lot of the benefits of this is provided on the website, and not in the quiz. However the actual statistic are gathered by the current quiz application and transmitted to the server if the user is logged in. Future iteration in the quiz might have some of this functionality integrated like taking a quiz on your 10 worst species.
+
+Another strength of the application is localisation feature that provides translations (on the live version) for over 20 languages. This will allow user to take the quiz in their local language and will greatly help non Norwegian or English speaking people. Most bird watchers know bird names only in the local language and sometimes in Latin (which we are both providing). The website is determining the language automatically but the user can of course change it and it saves it to next time.
+
+One weakness is the lack of user testing currently in the quiz application. We did one guerrilla testing session for digital innovation and go a lot of great feedback, but it was one time with a rather limited pool of test people. Further testing need to be done to improve the functionalities of the application as most of the features need the user input to become perfect. 
+
+
+The application offers responsiveness in its design allowing users to use the quiz app on any device that would prefer. We also have made it work with electron, making it work as a native app on epoles??? computers. This can be a great benefit for user who want a more native experience and separate the quiz application from the browser. The responsive art translates to the native application as well making both work with both small and large device sizes. It is developed with Bootstrap and a mobile first approach for having the best functionality and experience across devices.
+
+ 
+ \section{Assessing innovativeness :}
+For developing, we used Angular2 framework which was in beta at the time when we started the project, currently it has reached realise candidate 1. 
+The (original) quiz was made in flash and during this project we translated it into Angular2 using Gulp as building tool. \newline
+%somethig about styling  should come here
+
+Translating the app from flash to angular2 has many advantages among others, now the application is mobile friendly! 
+
+
+
+\section {Description of the innovation/development process:}
+For managing product development Scrum methodology was used. That means that whole our time was divided into 8 sprints. Usually duration of each sprint was 1 week. Our development process includes other features that are typical for Scrum. For instance Scrum daily meetings. But we start doing it not from the beginning of the project. Most of the time we were working together on the campus, and each team member knew what others were working on. That's why we decided not to make formal daily meeting every day. But with increasing of project complexity it was harder and harder to understand the project. And we faced with the problem that at the same time 2 members of team were working on the same task. So after that we started to be stricter on daily meetings. 
+\par
+As project management tool we used Jira. To estimate the difficulty of each issue we used story points in Jira. Planning poker was used to evaluate each task and to agree withing the team the time that should be spend on each task. In the middle of the project planning poker function became available directly from Jira. We agreed that using it directly from Jira was better solution for us. Incorrect estimation of tasks was the reason why our burn-down charts were looking not perfect. At some point of our development process we started to be more familiar with technologies and some issues were overestimated. Underestimation problems were more common problems at the beginning of the project. And other factor that influence correct estimations was that for different group members it took different time to resolve the issue.
+\par
+As communication tools we used Skype and Slack. Skype we used mostly for voice conferences when we were not able to meet on campus. We had experience with doing planning poker and sprint planning not only on campus(when all of us are together), but also via Skype. They main advantage of Slack for us was setting up different channels for different topics that related to our project. For project work as a communication tool Slack was more beneficial.
+\par
+Innovation process started with comparison of Angular 1 and Angular 2 frameworks. We analysed advantages and disadvantages of using both of this frameworks. Nevertheless current version of Angular 2 is still beta and has a lot of bugs, which make work challenging we still decided to use it. 
+
+
+
+
+\section { Discussion of the process used to innovate, develop, and test functionality:}
+As we were renewing this quiz platform an bringing it back to life we were looking for a new framework to place the Flash Technology now used in the previous version of the application. In our perspective this is innovation. The quiz it self is not innovative. There is nothing mind blowing the features in this quiz that would would really make it stand out from other quizzes. That being said what makes this application innovative is not the quiz it self but rather the way the platform as a whole is build and structured. As of new this is a "bird quiz" but that is only for demo purposes. Because of the flexible structure of the platform it can be easily modified to contain whatever topic wanted. It is also developed in a brand new and cutting edge web application framework, Angular 2\cite{Angular2:online}.
+
+\par
+Angular 2 is as mentioned a brand new framework for developing web applications. The reason we went with Angular 2 is first and formal that it has been recognized as a framework with a bright future. The Angular 2 framework is supported by Google and there is, in our experience, a lot of resources put into this new framework. Our first decision was the choice between AngularJS\cite{Angul93:online} and Angular2. Some of the project members had worked with AngularJS before, and their experience was mixed. Because of this the project group wanted to go for the new Angular 2. Even though we went with Angular 2 we were sceptical. Reason being it was still in early beta. Working with a framework in beta can be a pain in the ass for different reasons. First of all, the framework is still in development and could receive breaking changes at any moment and it almost always contains bugs. This means that breaking changes could break the platform over night and bugs could appear around the next corner. One should never underestimate the frustration coming from bugs. A framework in beta with poor documentation and with little public information on the Internet makes it at times hard to know if you are using the framework wrong or if there is a bug breaking your code.  
+
+\par
+
+
+
+
